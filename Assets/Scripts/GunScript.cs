@@ -6,13 +6,13 @@ using TMPro;
 public class GunScript : MonoBehaviour
 {
     [Header("AmmoCalculation")]
-    [SerializeField] public int maxAmmo = 35; // The maximum ammo the player can carry
-    [SerializeField] public int magCapacity = 7; // The maximum ammo the magazine can hold
-    [SerializeField] private int ammoInMag; // The current ammo in the magazine
-    [SerializeField] public int ammoInPocket; // The current ammo in the player's pocket
+    [SerializeField] public int maxAmmo = 35;
+    [SerializeField] public int magCapacity = 7;
+    [SerializeField] private int ammoInMag;
+    [SerializeField] public int ammoInPocket;
 
-    [SerializeField] private Transform firePoint; // Not used yet
-    [SerializeField] private float fireRate = 0.5f; // Not used yet
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private float reloadSpeed = 1.5f;
 
     public string forAmmoUI;
@@ -24,28 +24,33 @@ public class GunScript : MonoBehaviour
     [SerializeField] private Transform currentPos;
     [SerializeField] private Transform adsPos;
     [SerializeField] private float adsSpeed = 10f;
-    private bool onAds = false; // Player can't reload or shoot while aiming down sight
-
     private bool isAiming = false;
+
+    private float nextFireTime = 0f; // Firerate control
+
+    [Header("Animation")]
+    [SerializeField] private Animator gunAnimator;
+    private bool isAnimationPlaying = false;
 
     private void Start()
     {
-        ammoInMag = 7; // Initial ammo in the magazine
-        ammoInPocket = 28; // Initial ammo in the player's pocket
+        if (gunAnimator == null)
+        {
+            gunAnimator = GetComponentInChildren<Animator>(); // Main gun object is a child of this
+        }
+
+        ammoInMag = 7;
+        ammoInPocket = 28;
         RefreshAmmoUI();
     }
 
     void Update()
     {
         // ADS control
-        if (Input.GetKey(KeyCode.Mouse1))
-            isAiming = true;
-        else
-            isAiming = false;
+        isAiming = Input.GetKey(KeyCode.Mouse1);
 
         if (isAiming)
         {
-
             transform.position = Vector3.Lerp(transform.position, adsPos.position, Time.deltaTime * adsSpeed);
             transform.rotation = Quaternion.Lerp(transform.rotation, adsPos.rotation, Time.deltaTime * adsSpeed);
         }
@@ -55,12 +60,12 @@ public class GunScript : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, currentPos.rotation, Time.deltaTime * adsSpeed);
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && ammoInMag > 0 && !isReloading)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ammoInMag > 0 && !isReloading && !isAnimationPlaying && Time.time >= nextFireTime)
         {
-            //Fire Rate will be added later
+            nextFireTime = Time.time + fireRate;
             Shoot();
         }
-        else if (Input.GetKeyDown(KeyCode.R) && ammoInMag < magCapacity && ammoInPocket > 0 && !isReloading)
+        else if (Input.GetKeyDown(KeyCode.R) && ammoInMag < magCapacity && ammoInPocket > 0 && !isReloading && !isAnimationPlaying)
         {
             StartCoroutine(WaitForReload());
         }
@@ -71,13 +76,16 @@ public class GunScript : MonoBehaviour
         ammoInMag--;
         Debug.Log("MagCount: " + ammoInMag + " PocketAmmo: " + ammoInPocket);
         RefreshAmmoUI();
+
+        if (gunAnimator != null)
+        {
+            isAnimationPlaying = true;
+            gunAnimator.SetTrigger("Recoil");
+        }
     }
 
     public void Reload()
     {
-        if (onAds)
-            return; // Prevent reloading while aiming down sight
-
         int neededAmmo = magCapacity - ammoInMag;
         int ammoToReload = Mathf.Min(neededAmmo, ammoInPocket);
 
@@ -92,11 +100,11 @@ public class GunScript : MonoBehaviour
     {
         ammoInPocket += ammoToAdd;
 
-        int maxPocket = maxAmmo - magCapacity; //Currently 28
+        int maxPocket = maxAmmo - magCapacity;
 
         if (ammoInPocket > maxPocket)
         {
-            ammoInPocket = maxPocket; // Ensure that the total ammo (in pocket + in mag) does not exceed maxAmmo
+            ammoInPocket = maxPocket;
             Debug.Log("Reached to maximum limit");
         }
 
@@ -106,7 +114,7 @@ public class GunScript : MonoBehaviour
 
     public void RefreshAmmoUI()
     {
-        if(isReloading)
+        if (isReloading)
         {
             forAmmoUI = "Reloading...";
             ammoText.text = forAmmoUI;
@@ -123,10 +131,23 @@ public class GunScript : MonoBehaviour
         isReloading = true;
         Debug.Log("Reloading...");
         RefreshAmmoUI();
+
+        if (gunAnimator != null)
+        {
+            isAnimationPlaying = true;
+            gunAnimator.SetTrigger("Reload");
+        }
+
         yield return new WaitForSeconds(reloadSpeed);
+
         Reload();
         isReloading = false;
         RefreshAmmoUI();
         Debug.Log("Reloaded.");
+    }
+
+    public void OnAnimationEnd() // Call at the end of the animation
+    {
+        isAnimationPlaying = false;
     }
 }
