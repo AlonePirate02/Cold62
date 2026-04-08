@@ -32,6 +32,11 @@ public class GunScript : MonoBehaviour
     [SerializeField] private Animator gunAnimator;
     private bool isAnimationPlaying = false;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource gunAudioSource;
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip reloadSound;
+
     private void Start()
     {
         if (gunAnimator == null)
@@ -82,6 +87,10 @@ public class GunScript : MonoBehaviour
             isAnimationPlaying = true;
             gunAnimator.SetTrigger("Recoil");
         }
+
+        //adsPos.GetComponentInChildren<ParticleSystem>().Play(); // Muzzle flash effect for later
+
+        gunAudioSource.PlayOneShot(shootSound);
     }
 
     public void Reload()
@@ -137,6 +146,8 @@ public class GunScript : MonoBehaviour
             isAnimationPlaying = true;
             gunAnimator.SetTrigger("Reload");
         }
+
+        gunAudioSource.PlayOneShot(reloadSound);
 
         yield return new WaitForSeconds(reloadSpeed);
 
