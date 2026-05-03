@@ -20,6 +20,9 @@ public class GunScript : MonoBehaviour
 
     private bool isReloading = false;
 
+    [Header("Check")]
+    public bool canShoot = true;
+
     [Header("AimDownSight")]
     [SerializeField] private Transform currentPos;
     [SerializeField] private Transform adsPos;
@@ -36,6 +39,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] private AudioSource gunAudioSource;
     [SerializeField] private AudioClip shootSound;
     [SerializeField] private AudioClip reloadSound;
+
 
     private void Start()
     {
@@ -65,7 +69,7 @@ public class GunScript : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, currentPos.rotation, Time.deltaTime * adsSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ammoInMag > 0 && !isReloading && !isAnimationPlaying && Time.time >= nextFireTime)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ammoInMag > 0 && !isReloading && !isAnimationPlaying && Time.time >= nextFireTime && canShoot)
         {
             nextFireTime = Time.time + fireRate;
             Shoot();
@@ -138,6 +142,7 @@ public class GunScript : MonoBehaviour
     private IEnumerator WaitForReload()
     {
         isReloading = true;
+        canShoot = false;
         Debug.Log("Reloading...");
         RefreshAmmoUI();
 
@@ -153,6 +158,7 @@ public class GunScript : MonoBehaviour
 
         Reload();
         isReloading = false;
+        canShoot = true;
         RefreshAmmoUI();
         Debug.Log("Reloaded.");
     }
