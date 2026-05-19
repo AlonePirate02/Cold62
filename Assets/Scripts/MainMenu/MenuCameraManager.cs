@@ -16,6 +16,8 @@ public class MenuCameraManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f; // Haha I hate this bug
+
         // Get all child cameras and put them into the array
         cameraHolder = GetComponentsInChildren<Camera>(true);
 
