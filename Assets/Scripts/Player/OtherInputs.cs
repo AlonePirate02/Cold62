@@ -19,6 +19,15 @@ public class OtherInputs : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // Bugfix so these are enabled when we start the game
+        pm.enabled = true;
+        gunSc.enabled = true;
+        isPaused = false;
+        TogglePause(); // Just to make sure
+    }
+
     public void TogglePause()
     {
         if (isPaused)
