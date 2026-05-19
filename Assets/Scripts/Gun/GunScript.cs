@@ -48,8 +48,6 @@ public class GunScript : MonoBehaviour
             gunAnimator = GetComponentInChildren<Animator>(); // Main gun object is a child of this
         }
 
-        ammoInMag = 7;
-        ammoInPocket = 28;
         RefreshAmmoUI();
     }
 
