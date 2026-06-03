@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    // Settings
     public float maxHealth = 100f;
     public float currentHealth;
+
+    // References
+    private OtherInputs otherInputs;
+    
 
     private void Start()
     {
         currentHealth = maxHealth;
+
+        otherInputs = GetComponent<OtherInputs>(); // Attached to the player
     }
 
     public void Heal(float amount)
@@ -35,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player has died.");
-        // Respawn Menu Later
+        
+        otherInputs.OnPlayerDeath(); // Show death menu and disable player controls
     }
 }

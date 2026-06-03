@@ -9,6 +9,7 @@ public class QuickTimeEvent : MonoBehaviour
     public Image fillBar;
     public GameObject qteUI;
     private PlayerMovement pm;
+    private PlayerHealth ph;
     private GlobalVolumeManager gvm;
     private GunScript gunSc;
 
@@ -24,6 +25,7 @@ public class QuickTimeEvent : MonoBehaviour
     private void OnEnable()
     {
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        ph = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         gvm = GameObject.Find("Global Volume").GetComponent<GlobalVolumeManager>();
         gunSc = GameObject.FindGameObjectWithTag("Gun").GetComponent<GunScript>();
         gunSc.canShoot = false; // Disable shooting during QTE
@@ -65,8 +67,7 @@ public class QuickTimeEvent : MonoBehaviour
             if (timer >= timeLimit)
             {
                 Debug.Log("FAIL");
-                EditorApplication.isPlaying = false;
-                // You can implement a death method for player here
+                ph.Die();
                 break;
             }
 

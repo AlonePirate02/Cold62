@@ -8,6 +8,7 @@ public class OtherInputs : MonoBehaviour
     [SerializeField] private GunScript gunSc;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject otherUI;
+    [SerializeField] private GameObject deathMenu;
     public bool isPaused = false;
 
     void Update()
@@ -25,6 +26,7 @@ public class OtherInputs : MonoBehaviour
         pm.enabled = true;
         gunSc.enabled = true;
         isPaused = false;
+        deathMenu.SetActive(false); // Fix for future maybe idk
         TogglePause(); // Just to make sure
     }
 
@@ -32,7 +34,6 @@ public class OtherInputs : MonoBehaviour
     {
         if (isPaused)
         {
-
             pauseMenu.SetActive(true);
             otherUI.SetActive(false);
             pm.enabled = false;
@@ -54,6 +55,15 @@ public class OtherInputs : MonoBehaviour
 
     }
 
-
+    public void OnPlayerDeath()
+    {
+        deathMenu.SetActive(true);
+        otherUI.SetActive(false);
+        pm.enabled = false;
+        gunSc.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+    }
 
 }
