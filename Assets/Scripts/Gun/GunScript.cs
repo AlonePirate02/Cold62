@@ -31,9 +31,10 @@ public class GunScript : MonoBehaviour
 
     private float nextFireTime = 0f; // Firerate control
 
-    [Header("Animation")]
+    [Header("Animation & VFX")]
     [SerializeField] private Animator gunAnimator;
     private bool isAnimationPlaying = false;
+    public GameObject muzzleFlashEffect;
 
     [Header("Sound")]
     [SerializeField] private AudioSource gunAudioSource;
@@ -93,6 +94,7 @@ public class GunScript : MonoBehaviour
         //adsPos.GetComponentInChildren<ParticleSystem>().Play(); // Muzzle flash effect for later
 
         gunAudioSource.PlayOneShot(shootSound);
+        StartCoroutine(ObjectToggler(muzzleFlashEffect, 0.05f));
     }
 
     public void Reload()
@@ -159,6 +161,13 @@ public class GunScript : MonoBehaviour
         canShoot = true;
         RefreshAmmoUI();
         Debug.Log("Reloaded.");
+    }
+
+    private IEnumerator ObjectToggler(GameObject obj, float delay)
+    {
+        obj.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        obj.SetActive(false);
     }
 
     public void OnAnimationEnd() // Call at the end of the animation

@@ -1,34 +1,24 @@
 fileFormatVersion: 2
-guid: 31ecf7f1dc374ef48ad09f0c5afe8ed0
+guid: e33590cd8708fd1439b3fad2fcd8f845
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Araba_Atlas_Map
-    second: {fileID: 2800000, guid: 16b4b9d4cbd339a4d9ff969755aa9d81, type: 3}
+      name: Material
+    second: {fileID: 2100000, guid: d11711acba873b344a176a8672ae2bc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 25760b1ab672252478d93d5bed241b2e, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: bariyer
-    second: {fileID: 2800000, guid: 6d9b502526cc61b49aa40b8a71aca748, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: kirli duvar 2
-    second: {fileID: 2800000, guid: 164def8eef22c7849add984a5c148e6e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: masa
-    second: {fileID: 2800000, guid: 2a9e5196552af5344b1354ef599ed5d6, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: siyah
-    second: {fileID: 2800000, guid: 00eb5e95fad6f7e4891fd92e0386d0d8, type: 3}
+      name: bandaj
+    second: {fileID: 2800000, guid: c4b3376d899115f4b9e195e96ec8e081, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
