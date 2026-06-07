@@ -7,6 +7,9 @@ TagManager:
   - Magazine
   - Bandage
   - Gun
+  - Door
+  - Closet
+  - Drawer
   layers:
   - Default
   - TransparentFX

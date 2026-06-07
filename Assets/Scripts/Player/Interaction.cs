@@ -6,6 +6,7 @@ public class Interaction : MonoBehaviour
 {
     private GunScript gunScript;
     private PlayerHealth playerHealth;
+    private Camera cam;
 
     private float interactionRange = 3f; // The maximum distance for interaction
 
@@ -13,6 +14,7 @@ public class Interaction : MonoBehaviour
     {
         gunScript = FindAnyObjectByType<GunScript>();
         playerHealth = FindAnyObjectByType<PlayerHealth>();
+        cam = Camera.main;
     }
 
     private void Update()
@@ -25,11 +27,9 @@ public class Interaction : MonoBehaviour
 
     private void Interact()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * interactionRange, Color.red, 1f); // Visualize the ray in the editor
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, interactionRange))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interactionRange))
         {
             if (hit.collider.CompareTag("Magazine"))
             {
@@ -47,6 +47,18 @@ public class Interaction : MonoBehaviour
             {
                 playerHealth.Heal(20);
                 Destroy(hit.collider.gameObject);
+            }
+            else if (hit.collider.CompareTag("Door"))
+            {
+                hit.collider.GetComponent<DoorOpen>().ToggleDoor();
+            }
+            else if (hit.collider.CompareTag("Drawer"))
+            {
+                hit.collider.GetComponent<DrawerOpen>().ToggleDrawer();
+            }
+            else if (hit.collider.CompareTag("Closet"))
+            {
+                hit.collider.GetComponent<DoorOpen>().ToggleDoor();
             }
         }
     }
