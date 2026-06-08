@@ -5,6 +5,9 @@ using TMPro;
 
 public class GunScript : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private Camera playerCamera;
+
     [Header("AmmoCalculation")]
     [SerializeField] public int maxAmmo = 35;
     [SerializeField] public int magCapacity = 7;
@@ -49,6 +52,8 @@ public class GunScript : MonoBehaviour
             gunAnimator = GetComponentInChildren<Animator>(); // Main gun object is a child of this
         }
 
+        playerCamera = Camera.main; // Ensure we have a reference to the main camera
+
         RefreshAmmoUI();
     }
 
@@ -91,10 +96,22 @@ public class GunScript : MonoBehaviour
             gunAnimator.SetTrigger("Recoil");
         }
 
-        //adsPos.GetComponentInChildren<ParticleSystem>().Play(); // Muzzle flash effect for later
-
         gunAudioSource.PlayOneShot(shootSound);
         StartCoroutine(ObjectToggler(muzzleFlashEffect, 0.05f));
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 500f))
+        {
+            if(hit.collider.CompareTag("Runner"))
+            {
+                RunnerHealth runnerHealth = hit.collider.GetComponent<RunnerHealth>();
+                if (runnerHealth != null)
+                {
+                    runnerHealth.TakeDamage(25f); // Example damage value
+                }
+            }
+        }
     }
 
     public void Reload()

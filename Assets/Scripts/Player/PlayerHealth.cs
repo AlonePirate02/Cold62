@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 
     // References
     private OtherInputs otherInputs;
+    public Image healthBarLeft;
+    public Image healthBarRight;
     
 
     private void Start()
@@ -28,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
         Debug.Log("Healed. Current health: " + currentHealth);
+        UpdateHealthBar();
     }
 
     public void TakeDamage(float amount) 
@@ -38,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+        UpdateHealthBar();
     }
 
     public void Die()
@@ -45,5 +49,11 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player has died.");
         
         otherInputs.OnPlayerDeath(); // Show death menu and disable player controls
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBarLeft.fillAmount = currentHealth / maxHealth;
+        healthBarRight.fillAmount = currentHealth / maxHealth;
     }
 }

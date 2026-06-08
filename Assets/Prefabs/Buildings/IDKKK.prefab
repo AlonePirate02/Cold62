@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4263378466959280524}
   - component: {fileID: 8987631224734500944}
   - component: {fileID: 4675165097424335824}
-  m_Layer: 0
+  - component: {fileID: 8954254591834970371}
+  m_Layer: 7
   m_Name: Plane.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +106,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.13217099, y: 0.13701731, z: 0.0013078937}
   m_Center: {x: -0.054085497, y: -0.05650866, z: -0.00065394683}
+--- !u!114 &8954254591834970371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366048749011525044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: a5fcaf0ec5a7ba54b9b2333265ed84df, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &701632093999320340
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +149,7 @@ GameObject:
   - component: {fileID: 5634680355647568978}
   - component: {fileID: 7578650802898836168}
   - component: {fileID: 1713179641340364356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +254,7 @@ GameObject:
   - component: {fileID: 8312367159287120078}
   - component: {fileID: 8268623659643232299}
   - component: {fileID: 489821716486421683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +360,7 @@ GameObject:
   - component: {fileID: 8818558263336798183}
   - component: {fileID: 5409050214442328961}
   - component: {fileID: 5792855984329878401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cekmec2.001
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -448,7 +480,7 @@ GameObject:
   - component: {fileID: 13481836067537083}
   - component: {fileID: 153035797345990643}
   - component: {fileID: 2511261327146097150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +584,7 @@ GameObject:
   - component: {fileID: 7077685343210760589}
   - component: {fileID: 3212517422324944487}
   - component: {fileID: 1556335986999879914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +668,7 @@ GameObject:
   - component: {fileID: 2848650927672909657}
   - component: {fileID: 4401976221848399990}
   - component: {fileID: 5965717200961697656}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +773,7 @@ GameObject:
   - component: {fileID: 6963200186554325086}
   - component: {fileID: 4702822866674258587}
   - component: {fileID: 237794479319927746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +879,7 @@ GameObject:
   - component: {fileID: 3178713045812156801}
   - component: {fileID: 9124286086238460259}
   - component: {fileID: 3861919568984512286}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +983,7 @@ GameObject:
   - component: {fileID: 3137616394362042808}
   - component: {fileID: 6223231026119253234}
   - component: {fileID: 1735042556095323968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1067,7 @@ GameObject:
   - component: {fileID: 4224341261938240081}
   - component: {fileID: 112986099431782555}
   - component: {fileID: 7862932578879090290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1172,7 @@ GameObject:
   - component: {fileID: 8106367528751505331}
   - component: {fileID: 5875410051250448775}
   - component: {fileID: 6828376267401154727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1276,7 @@ GameObject:
   - component: {fileID: 8075201551011719103}
   - component: {fileID: 8826570477248862137}
   - component: {fileID: 1058787115801009779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1360,7 @@ GameObject:
   - component: {fileID: 5858545193831042286}
   - component: {fileID: 8319296245848213939}
   - component: {fileID: 9140223862963479027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1465,7 @@ GameObject:
   - component: {fileID: 2085883375377973135}
   - component: {fileID: 776606171673664400}
   - component: {fileID: 2702848106695408733}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1577,7 @@ GameObject:
   - component: {fileID: 612498548413276313}
   - component: {fileID: 1136690165155392246}
   - component: {fileID: 2175364514538091755}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "DuvarK\xF6\u015Fe.024"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,8 +1710,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0108690215, y: 0.34387892, z: 0.09215934}
-  m_Center: {x: 0.25329527, y: 0.020445952, z: -0.0083305435}
+  m_Size: {x: 0.0108690215, y: 0.34076154, z: 0.09215934}
+  m_Center: {x: 0.25329527, y: 0.022004629, z: -0.008330543}
 --- !u!65 &7998987041981384141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1699,8 +1731,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0108690215, y: 0.09192895, z: 0.090786316}
-  m_Center: {x: 0.25329548, y: -0.23210435, z: -0.0076440326}
+  m_Size: {x: 0.0108690215, y: 0.08972904, z: 0.090786316}
+  m_Center: {x: 0.25329548, y: -0.23320432, z: -0.0076440307}
 --- !u!65 &8010286948658405161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1797,7 +1829,7 @@ GameObject:
   - component: {fileID: 1940448049817261857}
   - component: {fileID: 3384408604437918942}
   - component: {fileID: 8622068421747890771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.088
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1901,7 +1933,7 @@ GameObject:
   - component: {fileID: 4088121042780188255}
   - component: {fileID: 8910003346422452014}
   - component: {fileID: 8985262513696034297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.059
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1985,7 +2017,7 @@ GameObject:
   - component: {fileID: 8985405218874908976}
   - component: {fileID: 3331265797192733570}
   - component: {fileID: 4591834456676441189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: masa.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2091,7 +2123,7 @@ GameObject:
   - component: {fileID: 4150559306339692479}
   - component: {fileID: 1719191876958704212}
   - component: {fileID: 4888326070094998020}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2196,7 +2228,7 @@ GameObject:
   - component: {fileID: 9163487225487077672}
   - component: {fileID: 5627942427978376413}
   - component: {fileID: 6416648774317712200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2301,7 +2333,7 @@ GameObject:
   - component: {fileID: 8387776677644096847}
   - component: {fileID: 2573059144480803349}
   - component: {fileID: 6144204642841333038}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2406,7 +2438,7 @@ GameObject:
   - component: {fileID: 5702938208617251830}
   - component: {fileID: 8643699998952572214}
   - component: {fileID: 611322706038712306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: masa.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2512,7 +2544,7 @@ GameObject:
   - component: {fileID: 8375144214289441182}
   - component: {fileID: 2814630417192933906}
   - component: {fileID: 190776839279396083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2614,7 +2646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 482318115778504162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IDKKK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2681,7 +2713,7 @@ GameObject:
   - component: {fileID: 759121533098750972}
   - component: {fileID: 2208952546940710874}
   - component: {fileID: 3570990206966815592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cekmece1.002
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -2801,7 +2833,7 @@ GameObject:
   - component: {fileID: 3812598797566724656}
   - component: {fileID: 1599996759287340291}
   - component: {fileID: 3369319910423971376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2906,7 +2938,7 @@ GameObject:
   - component: {fileID: 6313163205044420971}
   - component: {fileID: 7683374284277905852}
   - component: {fileID: 8613264019592028767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3012,7 +3044,7 @@ GameObject:
   - component: {fileID: 2215387029171293465}
   - component: {fileID: 4426388881880339707}
   - component: {fileID: 6552900039078403425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cekmece1.001
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -3132,7 +3164,7 @@ GameObject:
   - component: {fileID: 8145934100683420167}
   - component: {fileID: 1894010007468516846}
   - component: {fileID: 8928825637378513451}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3237,7 +3269,7 @@ GameObject:
   - component: {fileID: 4642389685778812755}
   - component: {fileID: 5990441391194047248}
   - component: {fileID: 2739226314676426607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DOORPIVOT
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -3279,8 +3311,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10692807, y: 0.22234496, z: 0.037655957}
-  m_Center: {x: 0.05310196, y: 0.016643357, z: -0.004331649}
+  m_Size: {x: 0.10692807, y: 0.22234496, z: 0.0255071}
+  m_Center: {x: 0.05310196, y: 0.01664336, z: 0.001742786}
 --- !u!114 &5990441391194047248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3298,8 +3330,8 @@ MonoBehaviour:
   isOpening: 0
   metalDoorOpenSound: {fileID: 0}
   metalDoorCloseSound: {fileID: 0}
-  woodDoorOpenSound: {fileID: 0}
-  woodDoorCloseSound: {fileID: 0}
+  woodDoorOpenSound: {fileID: 8300000, guid: ed54d25cc4e5d0342ae44e9a1dff2186, type: 3}
+  woodDoorCloseSound: {fileID: 8300000, guid: d8cc9171cfd70de4c9e2faac48fd80b0, type: 3}
 --- !u!82 &2739226314676426607
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3408,7 +3440,7 @@ GameObject:
   - component: {fileID: 8844702485887706316}
   - component: {fileID: 6734313583362369285}
   - component: {fileID: 4972958023367502416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3513,7 +3545,7 @@ GameObject:
   - component: {fileID: 7012323436723143802}
   - component: {fileID: 5047148082568193098}
   - component: {fileID: 7451285017003958594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sandalyeeee.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3620,7 +3652,7 @@ GameObject:
   - component: {fileID: 1991878700764008889}
   - component: {fileID: 3448621939705517432}
   - component: {fileID: 4828692465113956314}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cekmec2.002
   m_TagString: Drawer
   m_Icon: {fileID: 0}

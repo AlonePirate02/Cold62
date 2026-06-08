@@ -31,8 +31,12 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     public bool canRun = true;
     public bool fillStamina = true;
-    
-    
+
+    public bool sprinting => Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftControl) && canRun;
+    public bool crouching => Input.GetKey(KeyCode.LeftControl);
+    public CharacterController controller => GetComponent<CharacterController>();
+
+
     CharacterController characterController;
     void Start()
     {

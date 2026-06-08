@@ -10,6 +10,13 @@ TagManager:
   - Door
   - Closet
   - Drawer
+  - Runner
+  - Keycard
+  - End
+  - Wood
+  - Iron
+  - Concrete
+  - Snow
   layers:
   - Default
   - TransparentFX
@@ -19,11 +26,11 @@ TagManager:
   - UI
   - Gun
   - Building
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DeadEnemies
+  - EEEEE
+  - dontlayer
+  - SSS
+  - asdf
   - 
   - 
   - 

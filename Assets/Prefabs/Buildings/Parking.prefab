@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3146733048711803763}
   - component: {fileID: 1236774572548607626}
   - component: {fileID: 7694161639374003907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "ara\xE73"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1390526606833023941}
   - component: {fileID: 2885784305972951076}
   - component: {fileID: 8715466159549695024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3945921477999427811}
   - component: {fileID: 7017674317612510004}
   - component: {fileID: 6938622969668751498}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 7523961861422561712}
   - component: {fileID: 2212598611730246093}
   - component: {fileID: 127528315465998766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Teker4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 3825042624232944530}
   - component: {fileID: 3354935938014683491}
   - component: {fileID: 8623407184789123559}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "ara\xE73.001"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,9 +538,11 @@ GameObject:
   - component: {fileID: 3357850125554963439}
   - component: {fileID: 7037820908492976811}
   - component: {fileID: 7971784167504378470}
-  m_Layer: 0
+  - component: {fileID: 7515551212357670350}
+  - component: {fileID: 8534319881802143488}
+  m_Layer: 7
   m_Name: cekmec2.001
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,6 +612,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7515551212357670350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775125786829156643}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015720353, y: 0.024872972, z: 0.003956284}
+  m_Center: {x: -0.00643126, y: -0.000014907213, z: 0.00007816351}
+--- !u!114 &8534319881802143488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775125786829156643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af45ca0079aa9244aa4dcd58fef41f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openDistance: 0.5
+  isOpen: 0
+  reverse: 0
 --- !u!1 &4937195672158236312
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +665,7 @@ GameObject:
   - component: {fileID: 3515234284308354900}
   - component: {fileID: 426486938215878272}
   - component: {fileID: 8341753027553367061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: yerler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +875,7 @@ GameObject:
   - component: {fileID: 7778099121610739878}
   - component: {fileID: 227370569934012620}
   - component: {fileID: 5973667668607295402}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Teker4.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +979,8 @@ GameObject:
   - component: {fileID: 925700271269001303}
   - component: {fileID: 6132511773600065112}
   - component: {fileID: 4593492092553916696}
-  m_Layer: 0
+  - component: {fileID: 3071427362755788503}
+  m_Layer: 7
   m_Name: masa.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,6 +1052,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3071427362755788503
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536785442253264707}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5051154527977999955, guid: 31ecf7f1dc374ef48ad09f0c5afe8ed0, type: 3}
 --- !u!1 &8023127412118769730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1083,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693674839279489436}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Parking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1128,7 @@ GameObject:
   - component: {fileID: 6976455874554918611}
   - component: {fileID: 2292694385637091302}
   - component: {fileID: 3260943142411769650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "giri\u015F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,9 +1232,11 @@ GameObject:
   - component: {fileID: 5503452841725173651}
   - component: {fileID: 4817677005382219965}
   - component: {fileID: 6447952541705731607}
-  m_Layer: 0
+  - component: {fileID: 9031994558026035031}
+  - component: {fileID: 8396654833155980843}
+  m_Layer: 7
   m_Name: cekmece1.001
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1243,3 +1306,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9031994558026035031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167508871760312737}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.015720353, y: 0.024872972, z: 0.003956284}
+  m_Center: {x: -0.0064305593, y: 0.000018001998, z: 0.00007759261}
+--- !u!114 &8396654833155980843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167508871760312737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af45ca0079aa9244aa4dcd58fef41f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openDistance: 0.5
+  isOpen: 0
+  reverse: 0
